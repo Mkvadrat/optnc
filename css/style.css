@@ -1754,4 +1754,8 @@ button.fancybox-button.fancybox-button--thumbs{
 .ac-container div:last-child input:checked + label, .ac-container input:checked + label:hover{
   border-radius:0;
 }
-
+#fotoTov {
+	display:none;
+	position:absolute;
+	border:3px so #666;
+}

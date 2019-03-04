@@ -81,7 +81,7 @@ if($country == 'ru'){
 <meta name='yandex-verification' content='49d8eedf5ee49d6c' />
 <title><?php echo $row['title']; ?></title>
 
-<link href="css/style.css?ver=<?=$ver?>" rel="stylesheet" type="text/css" />
+<link href="css/styleold.css" rel="stylesheet" type="text/css" />
 
 <link rel="icon" href="ico.ico" type="image/x-icon">
 <link rel="shortcut icon" href="ico.ico" type="image/x-icon">

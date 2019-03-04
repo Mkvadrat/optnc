@@ -5,7 +5,7 @@ error_reporting(E_ALL);*/
 
 include ("login/lock.php"); 
 include ("blocks/number_ru.php"); 
-
+include ("../blocks/db.php");
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 
@@ -79,7 +79,8 @@ return @mail("$to", "$subj", $zag, $head);
 
 /*mysql_query("set names utf8");
 */
-mysql_set_charset('utf8',$bd); 
+
+/*mysql_set_charset('utf8',$bd); */
 $Month_Text = array('', 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря');
 
 $id_ord = $_POST['id'];
@@ -154,21 +155,22 @@ $count_text = str_replace('#ogrn#', $ur_ogrn, $count_text);
 //echo('<p>1</p>');
 
 if(isset($_POST['email'])){
-	mysql_set_charset('utf8',$bd); 
+	//mysql_set_charset('utf8',$bd); 
 	include "blocks/libmail.php"; // вставляем файл с классом3
 	
 	$mail_to = $_POST['email'];
-	$tema = 'Заказ на сайте nectar-crimea.ru';
+	$tema = 'Заказ на сайте ' . $_SERVER['SERVER_NAME'];
 	$from = 'tea-crimea@yandex.ru';
 	$emailContent = $_POST['message'];
 	
-	$query = mysql_query(" Select `o`.*, `t`.`title` as `name` From `orders_tov` as `o`
+	$query = mysql_query(" Select `o`.*, `t`.`title` as `name`, `t`.`link_product` as `link` From `orders_tov` as `o`
 							left join `Tovari` as `t` on `o`.`id_tov` = `t`.`id`
 							where `o`.`id_ord` = '$id_ord'
 							order by `t`.`idCat`, `t`.`ord1`  ") or die(mysql_error());
 	while($row = mysql_fetch_array($query)){
 		$name = $row['name'];
 		$id_tov = $row['id_tov'];
+		$link = $row['link'];
 		$amount = $row['amount'];
 		$cost_ru = $row['cost_ru'];
 		$cost_grn = $row['cost_grn'];
@@ -192,7 +194,7 @@ if(isset($_POST['email'])){
 		$kolSumm += $amount;
 		$td .= '
 			<tr>
-				<td '.$style.' align="left"><a target="_blank" href="http://nectar-crimea.ru/goods.php?tovar='.$id_tov.'">'.$name.'</a></td>
+				<td '.$style.' align="left"><a target="_blank" href="'.$link.'">'.$name.'</a></td>
 				<td '.$style.' align="center">'.$cur_cost.' '.$currency.'</td>
 				<td '.$style.'>'.$amount.' '.$words['sht'].'</td>
 				<td '.$style.' align="right">'.$cur_cena.' '.$currency.'</td>
@@ -234,14 +236,14 @@ if(isset($_POST['email'])){
 
 	include("../mpdf60/mpdf.php");
 	
-	$mpdf->ignore_invalid_utf8 = true;
+	//$mpdf->ignore_invalid_utf8 = false;
 	
 	$mpdf=new mPDF('win-1251','A4','','',10,15,10,15,0,10); 
 	$mpdf->useOnlyCoreFonts = true;    // false is default
 	$mpdf->SetProtection(array('print'));
-	$mpdf->SetTitle("nectar-crimea.ru");
-	$mpdf->SetAuthor("nectar-crimea.ru");
-	$mpdf->SetWatermarkText("nectar-crimea.ru");
+	$mpdf->SetTitle($_SERVER['SERVER_NAME']);
+	$mpdf->SetAuthor($_SERVER['SERVER_NAME']);
+	$mpdf->SetWatermarkText($_SERVER['SERVER_NAME']);
 	$mpdf->showWatermarkText = true;
 	$mpdf->watermark_font = 'DejaVuSansCondensed';
 	$mpdf->watermarkTextAlpha = 0.04;
@@ -249,7 +251,7 @@ if(isset($_POST['email'])){
 	
 	//echo('<p>2</p>');
 	
-	$fileName = 'nectar_crimea.ru_order';
+	$fileName = $_SERVER['SERVER_NAME'].'_order';
 	$mpdf->WriteHTML($content);
 	$mpdf->Output('../pdf/'.$fileName.'.pdf','F');
 	

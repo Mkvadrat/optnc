@@ -79,6 +79,13 @@
 			$querySlide=mysql_query("SELECT * FROM `Tovari`  where  `id`= '$id' ");
 			$rowSlide=mysql_fetch_array($querySlide);
 			$title_name = str_replace('"', '', $rowSlide['title']);
+			if(!empty($rowSlide['img'])){
+				$path = '../img/tovar/';
+				
+				$fotos = $path.$rowSlide['img'];
+			}else{
+				$fotos = '../img/tea/no_image.png';
+			}
 			echo('
 		<table id="tovTable" align="center" border="0" cellspacing="0" cellpadding="2">
           <tr>
@@ -94,7 +101,7 @@
            <tr>
             <td class="tov_name"> тнрн</td>
             <td align="center">
-				<img src="../img/tovar/'.$rowSlide['img'].'"><br>
+				<img src="'.$fotos.'"><br>
 				<input type="file" name="foto2" size="30">
 				<input type="hidden" name="foto" value="1" />
 			</td>

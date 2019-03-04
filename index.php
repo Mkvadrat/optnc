@@ -319,8 +319,15 @@ if($country == 'ru'){
 								$link_product = $rowTov['link_product'];
 								$idCat = $rowTov['link'];
 								$foto = $rowTov['fotoTov'];
+
 								if(!empty($foto)){
-								list($width, $height) = getimagesize('img/tovar/'.$foto);
+									$path = 'img/tovar/';
+									
+									list($width, $height) = getimagesize($path.$foto);
+									
+									$fotos = $path.$foto;
+								}else{
+									$fotos = 'img/tea/no_image.png';
 								}
 								
 								if($country == 'ru'){
@@ -343,7 +350,10 @@ if($country == 'ru'){
 																				
 						?>
 								<div idN="<?php echo $id; ?>" class="cartTr2<?php if($not_exist == 0){ ?> '' <?php }else{ ?> '-null' <?php } ?>">
-									<span  w="<?php echo $width; ?>" foto="img/tovar/<?php echo $foto; ?>" class="fotoTd"><img src="img/tovar/<?php echo $foto; ?>" height="15" width="20"</span>
+									
+									<span w="<?php echo $width; ?>" foto="<?php echo $fotos; ?>" class="fotoTd"><img src="<?php echo $fotos; ?>" height="15" width="20"></span>
+									
+									
 									<span><a href="<?php echo $link_product; ?>"><?php echo $tovar; ?></a></span>
 									
 									<?php if($not_exist == 0){ ?>
@@ -360,7 +370,6 @@ if($country == 'ru'){
 						<?php
 							}
 						?>
-						
 								<div>
 									<div colspan="3" align="right"> <b id="allSumm-text"></b> </div>
 									<div id="amount"></div>
@@ -486,6 +495,7 @@ if($country == 'ru'){
           </div>
         </div>
       </div>
+	  <img id="fotoTov" src=""  />
     </footer>
   </body>
 </html>
