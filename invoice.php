@@ -174,7 +174,7 @@ foreach ($idArr as $key => $id2) {
 		
 		$html .= '
 			<tr>
-			<td align="left"><a target="_blank" href="http://nectar.loc/goods.php?tovar='.$id2.'">'.$name.'</a></td>
+			<td align="left"><a target="_blank" href="http://' . $_SERVER['SERVER_NAME'] . '/goods.php?tovar='.$id2.'">'.$name.'</a></td>
 			<td align="center">'.$table_cost.' '.$currency.'</td>
 			<td>'.$kol.' шт</td>
 			<td align="right">'.$cur_cena.' '.$currency.'</td>
@@ -209,7 +209,7 @@ if($email == ''){
 
 // функция, которая отправляет наше письмо. 
 mail($to, $title, $html,  'From:'.$from. "\r\n" . "MIME-Version: 1.0\r\nContent-type: text/html; charset=windows-1251");
-header("Location:http://nectar.loc/orderok.php");
+header("Location: http://" . $_SERVER['SERVER_NAME'] .  "/orderok.php");
 
 
 ?>
