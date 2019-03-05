@@ -192,6 +192,7 @@ if(isset($_POST['email'])){
 		}
 		$style = 'style="border:1px solid #f5f5f5"';
 		$kolSumm += $amount;
+		if($link){
 		$td .= '
 			<tr>
 				<td '.$style.' align="left"><a target="_blank" href="'.$link.'">'.$name.'</a></td>
@@ -200,6 +201,16 @@ if(isset($_POST['email'])){
 				<td '.$style.' align="right">'.$cur_cena.' '.$currency.'</td>
 			</tr>
 			';
+		}else{
+		$td .= '
+			<tr>
+				<td '.$style.' align="left">'.$name.'</td>
+				<td '.$style.' align="center">'.$cur_cost.' '.$currency.'</td>
+				<td '.$style.'>'.$amount.' '.$words['sht'].'</td>
+				<td '.$style.' align="right">'.$cur_cena.' '.$currency.'</td>
+			</tr>
+			';
+		}
 	}
 	$td .= '
 			<tr style="background:#f5f5f5;">
