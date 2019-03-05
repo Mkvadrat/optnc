@@ -343,7 +343,13 @@ if($country == 'ru'){
 
 						?>
 							<div>
-								<span class="nameCat"><a href="<?php echo $idCat; ?>"><?php echo $cat; ?></a></span>
+								<span class="nameCat">
+									<?php if($idCat){ ?>
+										<span class="name-category"><a href="<?php echo $idCat; ?>"><?php echo $cat; ?></a></span>
+									<?php }else{ ?>
+										<span class="name-category"><?php echo $cat; ?></span>
+									<?php } ?>
+								</span>
 							</div>
 						<?php
 								}
@@ -353,8 +359,11 @@ if($country == 'ru'){
 									
 									<span w="<?php echo $width; ?>" foto="<?php echo $fotos; ?>" class="fotoTd"><img src="<?php echo $fotos; ?>" height="15" width="20"></span>
 									
-									
-									<span><a href="<?php echo $link_product; ?>"><?php echo $tovar; ?></a></span>
+									<?php if($link_product){ ?>
+										<span class="name-product"><a href="<?php echo $link_product; ?>"><?php echo $tovar; ?></a></span>
+									<?php }else{ ?>
+										<span class="name-product"><?php echo $tovar; ?></span>
+									<?php } ?>
 									
 									<?php if($not_exist == 0){ ?>
 										<span id="cena<?php echo $id; ?>"><?php echo $cena; ?> </span>
