@@ -289,7 +289,6 @@ if($country == 'ru'){
 							</select>
 					</div>
 					
-					
 					<?php
 						$queryTov=mysql_query("SELECT *, `Tovari`.`id` as `idTov`, `Tovari`.`img` as `fotoTov`, `categories`.`id` as `idCat`, `link` as link
 												FROM  `Tovari` 
@@ -353,37 +352,42 @@ if($country == 'ru'){
 							</div>
 						<?php
 								}
-																				
+								
+								if($not_exist == 0){
+									$class_tr = '';
+								}else{
+									$class_tr = '-null';   
+								}											
 						?>
-								<div idN="<?php echo $id; ?>" class="cartTr2<?php if($not_exist == 0){ ?> '' <?php }else{ ?> '-null' <?php } ?>">
-									
-									<span w="<?php echo $width; ?>" foto="<?php echo $fotos; ?>" class="fotoTd"><img src="<?php echo $fotos; ?>" height="15" width="20"></span>
-									
-									<?php if($link_product){ ?>
-										<span class="name-product"><a href="<?php echo $link_product; ?>"><?php echo $tovar; ?></a></span>
-									<?php }else{ ?>
-										<span class="name-product"><?php echo $tovar; ?></span>
-									<?php } ?>
-									
-									<?php if($not_exist == 0){ ?>
-										<span id="cena<?php echo $id; ?>"><?php echo $cena; ?> </span>
-										<input type="hidden" value="<?php echo $cena; ?>" name="cena[<?php echo $id; ?>]">
-										<input autocomplete="off" name="kol[<?php echo $id; ?>]" tov="<?php echo $id; ?>" class="kol" type="text" size="3" value="">
-										<span id="summ_<?php echo $id; ?>"></span>
-										<input type="hidden" name="idTov[<?php echo $id; ?>]" value="<?php echo $id; ?>" />
-									<?php }else{ ?>
-										<span class="not-exist" colspan="3">временно нет на складе</span>
-									<?php } ?>
-									
-								</div>
+							<div idN="<?php echo $id; ?>" class="cartTr2<?php echo $class_tr; ?>">
+								
+								<span w="<?php echo $width; ?>" foto="<?php echo $fotos; ?>" class="fotoTd"><img src="<?php echo $fotos; ?>" height="15" width="20"></span>
+								
+								<?php if($link_product){ ?>
+									<span class="name-product"><a href="<?php echo $link_product; ?>"><?php echo $tovar; ?></a></span>
+								<?php }else{ ?>
+									<span class="name-product"><?php echo $tovar; ?></span>
+								<?php } ?>
+								
+								<?php if($not_exist == 0){ ?>
+									<span id="cena<?php echo $id; ?>"><?php echo $cena; ?> </span>
+									<input type="hidden" value="<?php echo $cena; ?>" name="cena[<?php echo $id; ?>]">
+									<input autocomplete="off" name="kol[<?php echo $id; ?>]" tov="<?php echo $id; ?>" class="kol" type="text" size="3" value="">
+									<span id="summ_<?php echo $id; ?>"></span>
+									<input type="hidden" name="idTov[<?php echo $id; ?>]" value="<?php echo $id; ?>" />
+								<?php }else{ ?>
+									<span class="not-exist" colspan="3">временно нет на складе</span>
+								<?php } ?>
+								
+							</div>
 						<?php
 							}
 						?>
-								<div>
-									<div colspan="3" align="right"> <b id="allSumm-text"></b> </div>
-									<div id="amount"></div>
-									<div> <b id="allSumm"></b></div>
-								</div>
+							<div>
+								<div colspan="3" align="right"> <b id="allSumm-text"></b> </div>
+								<div id="amount"></div>
+								<div> <b id="allSumm"></b></div>
+							</div>
 						</div>				
 						<?php
 						}
