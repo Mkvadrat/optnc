@@ -2295,6 +2295,9 @@ button.fancybox-button.fancybox-button--thumbs{
 .card{
     margin-bottom: 30px;
 }
+.cont-ok-btn{
+	margin: 0 auto 100px;
+}
 /*14.02.19*/
 @media only screen and (max-width: 1200px){
 	

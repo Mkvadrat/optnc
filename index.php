@@ -1,4 +1,4 @@
-<? include ("blocks/db.php");
+<?php include ("blocks/db.php");
 $rezult = mysql_query ("SELECT title, meta_d, meta_k, text FROM set_table_sist WHERE page='pricelist'",$db);
 if (mysql_num_rows($rezult)>0){
 	$row = mysql_fetch_array($rezult);
@@ -193,19 +193,19 @@ if($country == 'ru'){
           <div class="row">
             <div class="col-md-10 top-nav">
               <ul>
-                <li><a href="#">Каталог</a></li>
-                <li><a href="#">Прайс-лист</a></li>
-                <li><a href="#">Заказ и оплата</a></li>
-                <li><a href="#">Наши магазины</a></li>
-                <li><a href="#">Документы</a></li>
-                <li><a href="#">Франчайзинг</a></li>
-                <li><a href="#">Контакты</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=4">О нас</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=7">Прайс-лист</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=11">Франчайзинг</a></li>
+				<li><a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
               </ul>
             </div>
-            <div class="col-md-2 entry">
+            <!--<div class="col-md-2 entry">
               <a href="#">Вход/</a>
               <a href="#">Регистрация</a>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
@@ -213,11 +213,11 @@ if($country == 'ru'){
         <div class="container">
           <div class="row header-desk">
             <div class="col-md-2 col-sm-3 col-xs-12 logo">
-              <a href="#"><img src="img/tea/logo-big.png" alt="logo" width="119" height="auto"></a>
+              <a href="http://nectar-crimea.ru/"><img src="img/tea/logo-big.png" alt="logo" width="119" height="auto"></a>
             </div>
             <div class="col-md-4 col-sm-9 col-xs-12 cooperation">
               <p>Крым,  Ялта,  г. Алупка,<br>ул. Крутой спуск  д. 12 а</p>
-              <a href="#" class="button">ОБРАТНЫЙ ЗВОНОК</a>
+              <!--<a href="#" class="button">ОБРАТНЫЙ ЗВОНОК</a>-->
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 data-info">
               <div class="row ">
@@ -228,7 +228,6 @@ if($country == 'ru'){
                   <div class="phone-icon">
                     <img src="img/tea/phone.png" alt="phone" width="24" height="24">
                   </div>
-                  <a href="tel:+79788649637">+7(978)8649637</a>
                   <a href="tel:+79781417930">+7(978)1417930</a>
                 </div>
               </div>
@@ -237,7 +236,7 @@ if($country == 'ru'){
         </div>
       </div>
     </header>
-	<div class="bottom-nav">
+	<!--<div class="bottom-nav">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 nav-bottom">
@@ -269,7 +268,7 @@ if($country == 'ru'){
 				</div>
 			</div>
 		</div>
-    </div>
+    </div>-->
 	
 	<section class="section__order">
 		<div class="container">
@@ -466,17 +465,16 @@ if($country == 'ru'){
             <div class="footer-content">
               <div class="footer-nav">
                                 <nav>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=#">Каталог</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=#">Прайс-лист</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=#">Заказ и оплата</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=#">Наши магазины</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=#">Документы</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=#">Франчайзинг</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=information/news">Блог</a>
-                                      <a href="http://teadev.mkvadrat.com/index.php?route=information/contact">Контакты</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=4">О нас</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=7">Прайс-лист</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=11">Франчайзинг</a>
+									<a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
                                   </nav>
                               </div>
-              <div class="footer-product">
+							  <!--<div class="footer-product">
                                 <nav>
                                       <a href="http://teadev.mkvadrat.com/index.php?route=product/category&amp;path=59">Фиточаи</a>
                                       <a href="http://teadev.mkvadrat.com/index.php?route=product/category&amp;path=60">Стевия, травы</a>
@@ -491,7 +489,7 @@ if($country == 'ru'){
                                       <a href="http://teadev.mkvadrat.com/index.php?route=product/category&amp;path=69">Косметические масла</a>
                                       <a href="http://teadev.mkvadrat.com/index.php?route=product/category&amp;path=70">Фигурное мыло</a>
                                   </nav>
-                              </div>
+                              </div>-->
               <div class="footer-company">
                 <div class="address-wrapper">
                   <div class="address">
@@ -506,8 +504,8 @@ if($country == 'ru'){
                 </div>
                 <div class="phone-footer">
                   <a href="tel:+79788649637" class="phone-big">+79788649637</a>
-<a href="#">Обратный звонок</a>
-<a href="#">Отследить заказ</a>                </div>
+<!--<a href="#">Обратный звонок</a>
+<a href="#">Отследить заказ</a>-->                </div>
               </div>
               <div class="copy">
                 <h2>2008 - 2019 © Все права защищены «Чаи Крыма» ™</h2>

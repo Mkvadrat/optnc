@@ -198,7 +198,7 @@ $html .= '
 
 		
 $title = 'Заказ nectar.crimea.ua №'.$id_ord.' '.$country_name.'  '.$summ.' '.$currency.' '.$kolSumm.' шт. ('.$type_arr[$type].')'; 
-$to = 'tea-crimea@yandex.ru'; 
+$to = 'info@nectar-crimea.ru'; 
 //$to = 'maxim-bonart@mail.ru'; 
 if($email == ''){
 	$from = 'no_email@tea.crimea.ua';
@@ -208,7 +208,7 @@ if($email == ''){
 
 
 // функция, которая отправляет наше письмо. 
-mail($to, $title, $html,  'From:'.$from. "\r\n" . "MIME-Version: 1.0\r\nContent-type: text/html; charset=windows-1251");
+mail($to, $title, $html,  'From:'.'nectar.crimea.ua'. "\r\n" . "MIME-Version: 1.0\r\nContent-type: text/html; charset=windows-1251");
 header("Location: http://" . $_SERVER['SERVER_NAME'] .  "/orderok.php");
 
 
