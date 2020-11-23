@@ -30,7 +30,9 @@ $type_arr[4] = 'круп. опт';
             <td>Тип</td>
             <td>Дата</td>
             <td>Кол</td>
-            <td>Имя</td>
+			<td>Фамилия</td>
+			<td>Имя</td>
+			<td>Отчество</td>
             <td>Телефон</td>
             <td>E-mail</td>
             <td>Доставка</td>
@@ -67,7 +69,9 @@ $type_arr[4] = 'круп. опт';
                     }
                     
                     $delivery = iconv('windows-1251', 'utf-8', $row['delivery']);
-                    $name = iconv('windows-1251', 'utf-8', $row['name']);
+					$name = iconv('windows-1251', 'utf-8', $row['name']);
+					$firstname = iconv('windows-1251', 'utf-8', $row['firstname']);
+					$patronymic = iconv('windows-1251', 'utf-8', $row['patronymic']);
 					$delivery = iconv('windows-1251', 'utf-8', $row['delivery']);
 					$city = iconv('windows-1251', 'utf-8', $row['city']);
 					$ur_name = iconv('windows-1251', 'utf-8', $row['ur_name']);
@@ -85,7 +89,9 @@ $type_arr[4] = 'круп. опт';
                             <td>'.$type_arr[$type].'</td>
                             <td>'.$date.'</td>
                             <td>'.$row['c'].' шт</td>
-                            <td>'.$name.'</td>
+						    <td>'.$name.'</td>
+							<td>'.$firstname.'</td>
+							<td>'.$patronymic.'</td>
                             <td>'.$row['phone'].'</td>
                             <td>'.$row['email'].'</td>
                             <td>'.$delivery.'</td>

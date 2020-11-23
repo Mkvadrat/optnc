@@ -1,4 +1,4 @@
-<?php include ("blocks/db.php");
+<? include ("blocks/db.php");
 $rezult = mysql_query ("SELECT title, meta_d, meta_k, text FROM set_table_sist WHERE page='pricelist'",$db);
 if (mysql_num_rows($rezult)>0){
 	$row = mysql_fetch_array($rezult);
@@ -72,6 +72,7 @@ if($country == 'ru'){
 <head>
 
 <link rel="stylesheet" href="js/libs/bootstrap/css/bootstrap.min.css">
+<link href="css/jquery.mmenu.all.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css?ver=<?=$ver?>" rel="stylesheet" type="text/css" />
 
 <script src="js/libs/jquery/jquery.min.js"></script>
@@ -189,6 +190,9 @@ if($country == 'ru'){
   <body>
     <header>
       <div class="top-header">
+	  <div class="menu-triggers">
+        <a href="#menu" class="mmenu-trigger"><span></span></a>
+      </div>
         <div class="container">
           <div class="row">
             <div class="col-md-10 top-nav">
@@ -198,7 +202,6 @@ if($country == 'ru'){
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a></li>
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a></li>
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a></li>
-				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=11">Франчайзинг</a></li>
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
               </ul>
             </div>
@@ -228,7 +231,9 @@ if($country == 'ru'){
                   <div class="phone-icon">
                     <img src="img/tea/phone.png" alt="phone" width="24" height="24">
                   </div>
-                  <a href="tel:+79781417930">+7(978)1417930</a>
+					<a href="tel:+79782184408">+79782184408</a>
+					<a href="tel:+79787528287">+79787528287</a>
+					<a href="tel:+79781417930">+79781417930</a>
                 </div>
               </div>
             </div>
@@ -279,7 +284,7 @@ if($country == 'ru'){
 							<div class="top__info">
 								<div class="top__info-item">
 									<div>Розничная цена</div>
-									<div>до 10 000 руб</div>
+									<div>от 3 000 до 10 000 руб</div>
 								</div>
 								<div class="top__info-item">
 									<div>Мелкий опт</div>
@@ -414,7 +419,7 @@ if($country == 'ru'){
 						}
 						?>
 						</div>
-<div class="form__order">
+				<div class="form__order" style="display:none;">
 					<div id="type-check">					
 						<label>
 							Физ лицо
@@ -440,7 +445,9 @@ if($country == 'ru'){
 						<div class="tr-ur">						
 						<input placeholder="Юр. адрес" id="ur-adres" type="text" name="ur_adres" value="" size="40" />
 						</div>						
-						<input placeholder="ФИО" id="baskN" type="text" name="name2" value="" size="40" />
+						<input placeholder="Фамилия" id="baskN" type="text" name="name2" value="" size="40" />
+						<input placeholder="Имя" id="firstname" type="text" name="firstname" value="" size="40" />
+						<input placeholder="Отчество" id="patronymic" type="text" name="patronymic" value="" size="40" />
 						<input  placeholder="Ваш телефон" id="baskT" type="text" name="tel" value="" size="40" />
 						<input  placeholder="Ваш email"  id="email" type="text" name="email" value="" size="40" />
 						<input  placeholder="Способ доставки"  id="baskD" type="text" name="dos" value="" size="40" />
@@ -453,6 +460,27 @@ if($country == 'ru'){
 					<input type="hidden" name="country" value="<?=$country?>" />
 					<input type="hidden" name="type" value="<?=$type?>" />
 					</div>
+					
+					<div class="order-info">
+						<div class="top__info">
+							<div class="top__info-item">
+								<div>Розничная цена</div>
+								<div>от 3 000 до 10 000 руб</div>
+							</div>
+							<div class="top__info-item">
+								<div>Мелкий опт</div>
+								<div>от 10 000 до 20 000 руб.</div>
+							</div>
+							<div class="top__info-item">
+								<div>Опт</div>
+								<div>от 20 000 до 300 000 руб.</div>
+							</div>
+							<div class="top__info-item">
+								<div>Крупный опт</div>
+								<div>свыше 300 000 руб.</div>
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -463,17 +491,16 @@ if($country == 'ru'){
         <div class="row">
           <div class="col-md-6">
             <div class="footer-content">
-              <div class="footer-nav">
-                                <nav>
-									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=4">О нас</a>
-									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=7">Прайс-лист</a>
-									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a>
-									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a>
-									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a>
-									<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=11">Франчайзинг</a>
-									<a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
-                                  </nav>
-                              </div>
+				<div class="footer-nav">
+					<nav>
+						<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=4">О нас</a>
+						<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=7">Прайс-лист</a>
+						<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a>
+						<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a>
+						<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a>
+						<a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a>
+					</nav>
+                </div>
 							  <!--<div class="footer-product">
                                 <nav>
                                       <a href="http://teadev.mkvadrat.com/index.php?route=product/category&amp;path=59">Фиточаи</a>
@@ -496,14 +523,16 @@ if($country == 'ru'){
                     <p>Крым,  Ялта,  г. Алупка<br>ул. Крутой спуск,  д. 12-а</p>
                   </div>
                   <div class="email-footer">
-                    <a href="mailto:q3dm0@yahoo.com">E-mail: q3dm0@yahoo.com</a>
+                    <a href="mailto:info@nectar-crimea.ru">E-mail: info@nectar-crimea.ru</a>
                   </div>
                 </div>
                 <div class="footer-data">
                   <p>Время работы:<br>Пн.-Пт. с 9:00 до 18:00</p>
                 </div>
                 <div class="phone-footer">
-                  <a href="tel:+79788649637" class="phone-big">+79788649637</a>
+					<a href="tel:+79782184408" class="phone-big">+79782184408</a>
+					<a href="tel:+79787528287" class="phone-big">+79787528287</a>
+					<a href="tel:+79781417930" class="phone-big">+79781417930</a>
 <!--<a href="#">Обратный звонок</a>
 <a href="#">Отследить заказ</a>-->                </div>
               </div>
@@ -522,5 +551,30 @@ if($country == 'ru'){
       </div>
 	  <img id="fotoTov" src=""  />
     </footer>
+	
+  <!-- 14.02.19 -->
+	<nav id="menu" style="opacity: 0;">
+		<ul>
+			<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=4">О нас</a></li>
+			<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=7">Прайс-лист</a></li>
+			<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a></li>
+			<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a></li>
+			<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a></li>
+			<li><a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
+		</ul>
+	  </nav>
+    <script src="/js/libs/mmenu/jquery.mmenu.all.js" type="text/javascript"></script>
+    <script>
+      jQuery(document).ready(function( $ ) {
+        $("#menu").mmenu({
+          "extensions": [
+            "pagedim-black",
+            "theme-dark"
+          ]
+        });
+      });
+    </script>
+    <!-- 14.02.19 -->
+	
   </body>
 </html>

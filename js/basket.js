@@ -59,27 +59,38 @@ function calc(){
 		}else{
 			$('#summ_'+id).html('');
 		}
-		if(sum2 !== 0){
-			$('#summ2_'+id).html(sum2);
-		}else{
-			$('#summ2_'+id).html('');
-		}
+
 		allSumm +=sum;
-		allSumm2 +=sum2;
+		//console.log(allSumm)
 	});	
+	
 	$('#amount').html(parseInt(amounts)+' шт.');
 	$('#allSumm-text').html('Итого:');
 	$('#allSumm').html(allSumm+' '+currency);
-	$('#allSumm2').html(allSumm2+' '+currency);
 	
-	/*if(allSumm > 300000){
-		$('.sale-tr').show();
-		sum_sale = allSumm*0.05;
+	
+	if(allSumm > 3000 && $('#type').val() == 1){ //розница
+		$('.form__order').show();
+		$('.order-info').hide();
+		/*sum_sale = allSumm*0.05;
 		$('#allSumm-sale').html(sum_sale+' '+currency);
-		$('#allSumm-sale2').html((allSumm-sum_sale)+' '+currency);
+		$('#allSumm-sale2').html((allSumm-sum_sale)+' '+currency);*/
+	}else if(allSumm > 10000 && $('#type').val() == 2){ //Мелкий
+		$('.form__order').show();
+		$('.order-info').hide();
+	}else if(allSumm > 20000 && $('#type').val() == 3){ //Опт
+		$('.form__order').show();
+		$('.order-info').hide();
+	}else if(allSumm > 300000 && $('#type').val() == 4){ //Крупный
+		$('.form__order').show();
+		$('.order-info').hide();
+	}else if(allSumm > 10000 && $('#type').val() == 5){ //Франчайзинг
+		$('.form__order').show();
+		$('.order-info').hide();
 	}else{
-		$('.sale-tr').hide();
-	}*/
+		$('.form__order').hide();
+		$('.order-info').show();
+	}
 }
 
 function vilidOrd(){
@@ -97,8 +108,8 @@ function vilidOrd(){
 		em = $('#email').val();
 		
 		
-	if($('#baskN').val() == '' || 	$('#baskT').val() == ''  || $('#baskD').val() == '' || $('#baskC').val() == '' || $('#baskN').val() == null || 	$('#baskT').val() == null || $('#baskD').val() == null || $('#baskC').val() == null){
-		alert('Заполните Имя, Телефон, Способ доставки, Город');
+	if($('#baskN').val() == '' || $('#firstname').val() == '' || $('#patronymic').val() == '' || $('#baskT').val() == ''  || $('#baskD').val() == '' || $('#baskC').val() == '' || $('#baskN').val() == null || $('#firstname').val() == null || $('#patronymic').val() == null ||$('#baskT').val() == null || $('#baskD').val() == null || $('#baskC').val() == null){
+		alert('Заполните Фамилия, Имя, Отчество, Телефон, Способ доставки, Город');
 		return false;
 	}else{
 		if(em == ''){

@@ -197,7 +197,6 @@ if($country == 'ru'){
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a></li>
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a></li>
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a></li>
-				<li><a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=11">Франчайзинг</a></li>
 				<li><a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
               </ul>
             </div>
@@ -208,10 +207,11 @@ if($country == 'ru'){
         <div class="container">
           <div class="row header-desk">
             <div class="col-md-2 logo">
-              <a href="#"><img src="img/tea/logo-big.png" alt="logo" width="180" height="80"></a>
+              <a href="http://nectar-crimea.ru/"><img src="img/tea/logo-big.png" alt="logo" width="180" height="80"></a>
             </div>
             <div class="col-md-3 cooperation">
               <p>Крым,  Ялта,  г. Алупка,<br>ул. Крутой спуск  д. 12 а</p>
+              <!--<a href="http://nectar-crimea.ru/" class="button">Сотрудничество и опт</a>-->
             </div>
             <div class="col-md-5 data-info">
               <div class="row ">
@@ -222,7 +222,9 @@ if($country == 'ru'){
                   <div class="phone-icon">
                     <img src="img/tea/phone.png" alt="phone" width="24" height="24">
                   </div>
-                  <a href="tel:+79781417930">+7(978)1417930</a>
+					<a href="tel:+79782184408">+79782184408</a>
+					<a href="tel:+79787528287">+79787528287</a>
+					<a href="tel:+79781417930">+79781417930</a>
                 </div>
               </div>
             </div>
@@ -281,15 +283,14 @@ if($country == 'ru'){
           <div class="col-md-6">
             <div class="footer-content">
               <div class="footer-nav">
-                <nav>
+				<nav>
 					<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=4">О нас</a>
 					<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=7">Прайс-лист</a>
 					<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=8">Заказ и оплата</a>
 					<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=9">Наши магазины</a>
 					<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=10">Документы</a>
-					<a href="http://nectar-crimea.ru/index.php?route=information/information&amp;information_id=11">Франчайзинг</a>
-					<a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a></li>
-                </nav>
+					<a href="http://nectar-crimea.ru/index.php?route=information/contact">Контакты</a>
+				</nav>
               </div>
               <!--<div class="footer-product">
                 <nav>
@@ -313,14 +314,16 @@ if($country == 'ru'){
                     <p>Крым,  Ялта,  г. Алупка,<br>ул. Крутой спуск  д. 12 а</p>
                   </div>
                   <div class="email-footer">
-                    <a href="mailto:tea-crimea@yandex.ru">E-mail: tea-crimea@yandex.ru</a>
+                    <a href="mailto:info@nectar-crimea.ru">E-mail: info@nectar-crimea.ru</a>
                   </div>
                 </div>
                 <div class="footer-data">
                   <p>Время работы:<br>Пн-Пт с 9:00 до 18:00</p>
                 </div>
                 <div class="phone-footer">
-                  <a href="tel:+79788649637" class="phone-big">+7(978)8649637</a>
+					<a href="tel:+79782184408" class="phone-big">+79782184408</a>
+					<a href="tel:+79787528287" class="phone-big">+79787528287</a>
+					<a href="tel:+79781417930" class="phone-big">+79781417930</a>
                   <!--<a href="#">Обратный звонок</a>
                   <a href="#">Отследить заказ</a>-->
                 </div>

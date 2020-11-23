@@ -416,8 +416,12 @@ if($country == 'ru'){
 					Юр. адрес
 					<input placeholder="" id="ur-adres" type="text" name="ur_adres" value="" size="40" />
 					</div>
-					ФИО
-					<input placeholder="фамилия, имя, отчество" id="baskN" type="text" name="name2" value="" size="40" />
+					Фамилия
+					<input placeholder="фамилия" id="baskN" type="text" name="name2" value="" size="40" />
+					Имя
+					<input placeholder="имя" id="firstname" type="text" name="firstname" value="" size="40" />
+					Отчество
+					<input placeholder="отчество" id="patronymic" type="text" name="patronymic" value="" size="40" />
 					Ваш телефон
 					<input  id="baskT" type="text" name="tel" value="" size="40" />
 					Ваш email
